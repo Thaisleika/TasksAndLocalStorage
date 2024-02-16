@@ -1,0 +1,13 @@
+{
+  "name": "tasksandlocalstorage",
+  "version": "1.0.0",
+  "description": "Lista de tarefas usando JavaScript e salvando as tasks na local storage",
+  "main": "mains.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
