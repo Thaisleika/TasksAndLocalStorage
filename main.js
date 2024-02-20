@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tasks.forEach((task, index) => {
       const li = document.createElement('li');
           li.className = 'task-item';
-          li.innerHTML = `<span>${task}</span> <button class="remove-btn"> del </button>`
+          li.innerHTML = `<span class="bg-task">${task}</span> <button class="remove-btn"> delete </button>`
           ;
 
       li.addEventListener('click', () => {

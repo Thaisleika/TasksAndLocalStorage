@@ -51,30 +51,26 @@ button:hover {
  background-color: #ff1493;
 }
 
+button.remove-btn {
+ background-color: #aaa;
+ margin-left: 17rem;
+}
+
 ul {
  list-style-type: none;
  padding: 0;
 }
 
-list {
+li {
  padding: 10px;
  margin-bottom: 10px;
  background-color: #f9f9f9;
  border-radius: 6px;
  position: relative;
+ justify-content: space-between;
 }
 
-button.delete-btn {
- position: absolute;
- right: 10px;
- top: 50%;
- transform: translateY(-50%);
- background-color: transparent;
- color: #ff6;
- border: none;
- cursor: pointer;
+.task-item.done {
+text-decoration: line-through;
 }
 
-button.delete-btn:hover {
- color: #ff1493;
-}
