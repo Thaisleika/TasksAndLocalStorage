@@ -5,33 +5,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const taskInput = document.getElementById('taskInput');
   const taskList = document.getElementById('taskList');
 
+
   function TaskPage() {
-    const tasks = tasksManager.getTasks();
-    taskList.innerHTML = "";
-    
+    const tasks = tasksManager.currentyTasks();
+
+    taskList.innerHTML = '';
+
     tasks.forEach((task, index) => {
-      const listItem = document.createElement('li');
-      listItem.className = 'task-item';
-      listItem.innerHTML = `
-        <p>${task}</p>
-        <p class='delete-btn'>X</p>
-      `;
+      const li = document.createElement('li');
+          li.className = 'task-item';
+          li.innerHTML = `<span>${task}</span> <button class="remove-btn"> del </button>`
+          ;
 
-      listItem.addEventListener('click', () => {
-        listItem.classList.toggle('done');
+      li.addEventListener('click', () => {
+        li.classList.toggle('done');
       });
 
-      listItem.children[1].addEventListener('click', () => {
-        tasksManager.removeTask(index);
-        TaskPage();
+      li.children[1].addEventListener('click', () => {
+        tasksManager.removeTask(index)
+        TaskPage()
       });
 
-      taskList.appendChild(listItem);
+      taskList.appendChild(li);
     });
   }
 
   function validateTaskInput() {
-    const task = taskInput.value;
+    const task = taskInput.value.trim();
     if (task) {
       tasksManager.addTask(task);
       taskInput.value = '';
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   addTaskButton.addEventListener('click', validateTaskInput);
+
   taskInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       validateTaskInput();

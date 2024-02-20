@@ -11,10 +11,13 @@
     <h1>Minha Lista de Tarefas</h1>
     <div class="add-task-container">
       <input type="text" id="taskInput" placeholder="Adicionar nova tarefa">
-      <button id="addTaskButton">Adicionar</button>
+      <button id="addTaskButton">Adicionar</button> 
+  
     </div>
     <ul id="taskList">
-      <!-- As tarefas serão adicionadas dinamicamente aqui -->
+      <li id="tasks">
+        <button id="removeTask" class="delete-btn">deletar</button>
+      </li>
     </ul>
   </div>
   <script type="module" src="main.js"></script>

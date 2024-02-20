@@ -1,21 +1,21 @@
 import { storage } from './storage.js';
 
 export const tasksManager = {
- tasks: storage.getTasks(),
+  tasks: storage.getTasks(),
 
- addtask: function(task) {
-  this.tasks.push(task);
-  storage.saveTasks(this.tasks);
- },
+  addTask: function(task) {
+    this.tasks.push(task);
+    storage.saveTasks(this.tasks);
+  },
 
- removeTask: function(index) {
-  this.tasks.splice(index, 1);
-  storage.saveTasks(this.tasks);
- },
+  removeTask: function(index) {
+    this.tasks.splice(index, 1);
+    storage.saveTasks(this.tasks);
+  },
 
- currentyTasks: function() {
-  return this.tasks;
- }
+  currentyTasks: function() {
+    return this.tasks;
+  }
 };
 
 /*
