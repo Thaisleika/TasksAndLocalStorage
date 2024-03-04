@@ -78,12 +78,6 @@ li {
     margin-bottom: 1rem;
 }
 
-div.button-add  {
-display: flex;
-background-color: red;
-width: 40px;
-}
-
 .task-item.done {
     text-decoration: line-through;
 }

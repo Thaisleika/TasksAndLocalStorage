@@ -20,21 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     taskList.innerHTML = '';
 
-    tasks.forEach((task, index) => {
+    tasks.forEach((task) => {
       const li = document.createElement('li');
           li.className = 'task-item';
           li.innerHTML = `<span class="bg-task">${task}</span> <button class="remove-btn"> delete </button>`
           ;
 
       li.addEventListener('click', () =>
-      li.classList.addTask)
+      li.classList.addTask())
 
       li.addEventListener('click', () => {
         li.classList.toggle('done');
       });
 
       li.children[1].addEventListener('click', () => {
-        tasksManager.removeTask(index)
+        tasksManager.removeTask()
         TaskPage()
       });
 
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const date = dateTaskInput.value.trim()
     if (task && date) {
       tasksManager.addTask(task);
+      tasksManager.addTask(date)
       taskInput.value = '';
       dateTaskInput.value ='';
       TaskPage();  
