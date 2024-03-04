@@ -1,10 +1,19 @@
 import { tasksManager } from './tasksManager.js';
 
+/**
+   * @method getElementById busca o elemento pelo id indicado no html.
+   * @method addEventListener escuta o elemento que foi passado para ele
+   no caso o conteudo da DOM, qdo ha uma alteração ele percebe e renderiza.
+   * @var document.addEventListener guarda toda essa função de carregamento da pagina.
+  * @var task recebe a lista atual contina na @function currentyTasks do taskManager.
+  * 
+   */
+
 document.addEventListener('DOMContentLoaded', () => {
   const addTaskButton = document.getElementById('addTaskButton');
   const taskInput = document.getElementById('taskInput');
+  const dateTaskInput = document.getElementById('dateTaskInput');
   const taskList = document.getElementById('taskList');
-
 
   function TaskPage() {
     const tasks = tasksManager.currentyTasks();
@@ -16,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
           li.className = 'task-item';
           li.innerHTML = `<span class="bg-task">${task}</span> <button class="remove-btn"> delete </button>`
           ;
+
+      li.addEventListener('click', () =>
+      li.classList.addTask)
 
       li.addEventListener('click', () => {
         li.classList.toggle('done');
@@ -32,10 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function validateTaskInput() {
     const task = taskInput.value.trim();
-    if (task) {
+    const date = dateTaskInput.value.trim()
+    if (task && date) {
       tasksManager.addTask(task);
       taskInput.value = '';
-      TaskPage();
+      dateTaskInput.value ='';
+      TaskPage();  
     }
   }
 
@@ -46,6 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
       validateTaskInput();
     }
   });
-
   TaskPage();
 });
